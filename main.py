@@ -54,19 +54,16 @@ def add_password():
     encrypted_passwords.append(encrypted)
     print("Password added successfully!")
 def save_passwords():
-     vault = []
-   for i in range(len(websites)):
-       vault.append({
+    vault = []
+    for i in range(len(websites)):
+        vault.append({
            "website": websites[i],
            "username": usernames[i],
            "password": encrypted_passwords[i]
-       })
+        })
    with open("vault.txt", "w") as file:
        json.dump(vault, file)
    print("Passwords saved successfully!")
-    Save the password vault to a file.
-
-# Function to load passwords from a JSON file 
 def load_passwords():
     try:
         with open("vault.txt", "r") as file:
