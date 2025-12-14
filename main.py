@@ -60,34 +60,6 @@ def add_password():
    print("Password added successfully!")
     Add a new password to the password manager.
 
-    This function should prompt the user for the website, username,  and password and store them to lits with same index. Optionally, it should check password strengh with the function is_strong_password. It may also include an option for the user to
-    generate a random strong password by calling the generate_password function.
-
-    Returns:
-        None
-    """
-
-# Function to retrieve a password 
-def get_password():
-       website = input("Enter website to retrieve password: ")
-   if website in websites:
-       index = websites.index(website)
-       username = usernames[index]
-       encrypted = encrypted_passwords[index]
-       decrypted = caesar_decrypt(encrypted, 3)
-       print("Username:", username)
-       print("Password:", decrypted)
-   else:
-       print("Website not found.")
-    Retrieve a password for a given website.
-
-    This function should prompt the user for the website name and
-    then display the username and decrypted password for that website.
-
-    Returns:
-        None
-    """
-
 # Function to save passwords to a JSON file 
 def save_passwords():
    vault = []
@@ -101,17 +73,6 @@ def save_passwords():
        json.dump(vault, file)
    print("Passwords saved successfully!")
     Save the password vault to a file.
-
-    This function should save passwords, websites, and usernames to a text
-    file named "vault.txt" in a structured format.
-
-    Returns:
-        None
-    """
-
-    Returns:
-        None
-    """
 
 # Function to load passwords from a JSON file 
 def load_passwords():
@@ -128,42 +89,30 @@ def load_passwords():
         print("Passwords loaded successfully!")
     except FileNotFoundError:
         print("No saved password file found.")
-     """
-    Load passwords from a file into the password vault.
-
-    This function should load passwords, websites, and usernames from a text
-    file named "vault.txt" (or a more generic name) and populate the respective lists.
-
-    Returns:
-        None
-
-  # Main method
 def main():
-# implement user interface 
-
-  while True:
-    print("\nPassword Manager Menu:")
-    print("1. Add Password")
-    print("2. Get Password")
-    print("3. Save Passwords")
-    print("4. Load Passwords")
-    print("5. Quit")
-    
-    choice = input("Enter your choice: ")
-    
-    if choice == "1":
-        add_password()
-    elif choice == "2":
-        get_password()
-    elif choice == "3":
-        save_passwords()
-    elif choice == "4":
-        passwords = load_passwords()
-        print("Passwords loaded successfully!")
-    elif choice == "5":
-        break
-    else:
-        print("Invalid choice. Please try again.")
+    while True:
+        print("\nPassword Manager Menu:")
+        print("1. Add Password")
+        print("2. Get Password")
+        print("3. Save Passwords")
+        print("4. Load Passwords")
+        print("5. Quit")
+        choice = input("Enter your choice: ")
+        if choice == "1":
+            add_password()
+        elif choice == "2":
+            get_password()
+        elif choice == "3":
+            save_passwords()
+        elif choice == "4":
+            load_passwords()
+        elif choice == "5":
+            print("Goodbye!")
+            break
+        else:
+            print("Invalid choice. Please try again.")
+if __name__ == "__main__":
+    main()
 
 # Execute the main function when the program is run
 if __name__ == "__main__":
