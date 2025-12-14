@@ -54,7 +54,7 @@ def add_password():
    encrypted_passwords.append(encrypted)
    print("Password added successfully!")
 def save_passwords():
-   vault = []
+     vault = []
    for i in range(len(websites)):
        vault.append({
            "website": websites[i],
@@ -104,4 +104,3 @@ def main():
         else:
             print("Invalid choice. Please try again.")
 if __name__ == "__main__":
-    main()
