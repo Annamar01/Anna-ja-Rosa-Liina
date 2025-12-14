@@ -2,8 +2,6 @@ import json
 import re
 import random
 import string
-
-# Caesar cipher encryption and decryption functions (pre-implemented)
 def caesar_encrypt(text, shift):
     encrypted_text = ""
     for char in text:
@@ -19,11 +17,8 @@ def caesar_encrypt(text, shift):
         else:
             encrypted_text += char
     return encrypted_text
-
 def caesar_decrypt(text, shift):
     return caesar_encrypt(text, -shift)
-
-# Password strength checker function (optional)
 def is_strong_password(password):
     # ...
 
