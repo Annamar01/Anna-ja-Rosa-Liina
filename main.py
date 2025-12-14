@@ -37,19 +37,14 @@ def generate_password(length):
 encrypted_passwords = []
 websites = []
 usernames = []
-
-encrypted_passwords = []
-websites = []
-usernames = []
-
 def add_password():
     website = input("Enter website: ")
-   username = input("Enter username: ")
-   choice = input("Generate strong password? (y/n): ")
-   if choice.lower() == "y":
+    username = input("Enter username: ")
+    choice = input("Generate strong password? (y/n): ")
+    if choice.lower() == "y":
        password = generate_password(12)
        print("Generated password:", password)
-   else:
+    else:
        password = input("Enter password: ")
        if not is_strong_password(password):
            print("Warning: Password is weak!")
@@ -58,9 +53,6 @@ def add_password():
    usernames.append(username)
    encrypted_passwords.append(encrypted)
    print("Password added successfully!")
-    Add a new password to the password manager.
-
-# Function to save passwords to a JSON file 
 def save_passwords():
    vault = []
    for i in range(len(websites)):
@@ -111,9 +103,5 @@ def main():
             break
         else:
             print("Invalid choice. Please try again.")
-if __name__ == "__main__":
-    main()
-
-# Execute the main function when the program is run
 if __name__ == "__main__":
     main()
