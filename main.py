@@ -48,11 +48,11 @@ def add_password():
        password = input("Enter password: ")
        if not is_strong_password(password):
            print("Warning: Password is weak!")
-   encrypted = caesar_encrypt(password, 3)
-   websites.append(website)
-   usernames.append(username)
-   encrypted_passwords.append(encrypted)
-   print("Password added successfully!")
+    encrypted = caesar_encrypt(password, 3)
+    websites.append(website)
+    usernames.append(username)
+    encrypted_passwords.append(encrypted)
+    print("Password added successfully!")
 def save_passwords():
      vault = []
    for i in range(len(websites)):
