@@ -20,26 +20,28 @@ def caesar_encrypt(text, shift):
 def caesar_decrypt(text, shift):
     return caesar_encrypt(text, -shift)
 def is_strong_password(password):
-    # ...
-
-# Password generator function (optional)
+    if len(password) < 8:
+        return False
+    if not re.search(r"[A-Z]", password):
+        return False
+    if not re.search(r"[a-z]", password):
+        return False
+    if not re.search(r"[0-9]", password):
+        return False
+    if not re.search(r"[!@#$%^&*(),.?\":{}|<>]", password):
+        return False
+    return True
 def generate_password(length):
-     """
-    Generate a random strong password of the specified length.
-
-    Args:
-        length (int): The desired length of the password.
-
-    Returns:
-        str: A random strong password.
-    """
-
-# Initialize empty lists to store encrypted passwords, websites, and usernames
+    characters = string.ascii_letters + string.digits + "!@#$%^&*()"
+    return "".join(random.choice(characters) for _ in range(length))
 encrypted_passwords = []
 websites = []
 usernames = []
 
-# Function to add a new password 
+encrypted_passwords = []
+websites = []
+usernames = []
+
 def add_password():
     website = input("Enter website: ")
    username = input("Enter username: ")
