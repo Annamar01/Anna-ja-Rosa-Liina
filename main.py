@@ -61,9 +61,9 @@ def save_passwords():
            "username": usernames[i],
            "password": encrypted_passwords[i]
         })
-   with open("vault.txt", "w") as file:
+    with open("vault.txt", "w") as file:
        json.dump(vault, file)
-   print("Passwords saved successfully!")
+    print("Passwords saved successfully!")
 def load_passwords():
     try:
         with open("vault.txt", "r") as file:
