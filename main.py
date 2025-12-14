@@ -41,7 +41,21 @@ usernames = []
 
 # Function to add a new password 
 def add_password():
-    """
+    website = input("Enter website: ")
+   username = input("Enter username: ")
+   choice = input("Generate strong password? (y/n): ")
+   if choice.lower() == "y":
+       password = generate_password(12)
+       print("Generated password:", password)
+   else:
+       password = input("Enter password: ")
+       if not is_strong_password(password):
+           print("Warning: Password is weak!")
+   encrypted = caesar_encrypt(password, 3)
+   websites.append(website)
+   usernames.append(username)
+   encrypted_passwords.append(encrypted)
+   print("Password added successfully!")
     Add a new password to the password manager.
 
     This function should prompt the user for the website, username,  and password and store them to lits with same index. Optionally, it should check password strengh with the function is_strong_password. It may also include an option for the user to
